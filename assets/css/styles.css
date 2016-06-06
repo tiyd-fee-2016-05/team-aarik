@@ -4,19 +4,68 @@ body {
 
 nav {
   background: #f5f5f5;
+  width: 100%;
+  height: 40px;
+  margin: 0 auto;
+  border-bottom: 1px solid #c8c8c8;
+  padding: 7px 0 7px 0;
+}
+
+.main-nav li {
+  display: inline-block;
+  text-decoration: none;
+}
+
+.fa-github {
+  position: absolute;
+  display: inline-block;
+  padding-top: 2px;
+  margin-top:-22.5px;
+  padding-right: 12px;
+  padding-left: 205px;
+}
+.search-github input {
+  display: inline-block;
+  width: 350px;
+  height: 25px;
+  border-radius: .25em;
+  font-size: 13px;
+  color: #c8c8c8;
+  padding-left: 5px;
+  margin-left: 235px;
+  margin-top: 5px;
+
+}
+/*.header-links {
+  /*position: absolute;
+  position: relative;
+margin-left:100px;
+}*/
+
+.main-nav a {
+  text-decoration: none;
+  color: #000;
+  font-size: 12.5px;
+  font-weight: 700;
+  padding-left: 25px;
 }
 
 .wrapper {
-  border: 1px solid green;
+  /*border: 1px solid green;*/
   width: 70%;
   margin: 0 auto;
 }
+
 .sidebar {
   position: relative;
   display: inline-block;
   width: 25%;
 }
 
+.sidebar,
+.main-content {
+  padding-top: 18.5px;
+}
 .avatar {
   width: 80%;
   border-radius: .5em;
@@ -25,17 +74,40 @@ nav {
 .user-actual-name {
   font-weight: 700;
   font-size: 30px;
+  padding-top: 12.5px;
   color: #333;
 }
 
 .user-login-name {
   width: 80%;
   font-size: 20px;
+  font-weight: 300;
   color: #666;
+  padding-top: 7px;
   padding-bottom: 10px;
-  border-bottom: 1px solid #666;
+  border-bottom: 1px solid #c8c8c8;
   margin-bottom: 10px;
 
+}
+
+.user-data-icon {
+  color: #666;
+  margin-top: 6.5px;
+}
+
+.fa-pied-piper-alt{
+  padding-right: 5.25px;
+}
+
+.fa-map-marker {
+  padding-left: 4px;
+  padding-right: 9.5px;
+}
+
+.fa-envelope-o,
+.fa-link,
+.fa-clock-o {
+  padding-right: 8px;
 }
 
 .user-info {
@@ -47,13 +119,14 @@ nav {
 
 .user-info a {
   text-decoration: none;
+  color: #4078c0;
 }
 
 .joined-date {
   width: 80%;
   margin-bottom: 10px;
   padding-bottom: 10px;
-  border-bottom: 1px solid #666;
+  border-bottom: 1px solid #c8c8c8;
 }
 
 .social-status {
@@ -76,59 +149,84 @@ nav {
 }
 .main-content{
   position: absolute;
-  /*float: right;*/
   display: inline-block;
-  /*margin-top: -1000px;*/
   margin-left: -40px;
   display: inline-block;
-  /*border: 2px solid yellow;*/
   width: 50%;
+}
 
-  /*margin-top: -100px;*/
-}
-.content-bar {
-  border-bottom:1px solid #d8d8d8;
-}
+/*.bottom-border {
+  position: relative;
+  width: 108.625%;
+  border-bottom: 1px solid #c8c8c8;
+  padding-top: -25px;
+  margin-bottom: 8px;
+}*/
 .secondary-nav-content {
   /*position: relative;*/
   display: inline-block;
   width: 18%;
   padding-bottom: 10px;
-  margin-bottom:10px;
-  border-bottom: 1px solid #green;
+  margin-bottom: 10px;
+  /*border-bottom: 1px solid #green;*/
+}
+
+.follow,
+.block  {
+  position: absolute;
+  display: inline-block;
+  margin-top: 2px;
+  float: right;
 }
 
 .follow {
   background: #71cb52;
   width: 70px;
   height: 25px;
-  border-radius: .15em;
-  margin-left: 60px;
+  border-radius: .25em;
+  margin-left: 130px;
   color: #fff;
   font-size: 13px;
   font-weight: 700;
 }
-.follow,
-.block  {
-  position: absolute;
-  display: inline-block;
-  margin-top: 8px;
-  float: right;
+
+.block {
+  font-size: 13px;
+  font-weight: 700;
+  margin-left: 75px;
+  background: #fff;
+  color: #666;
+  width: 120px;
+  height: 25px;
+  border-radius: .25em;
 }
 
 .contributions {
   font-size: 16px;
   padding-left: 10px;
-  padding-top: 5px;
+  padding-top: 10px;
+  padding-bottom: 8px;
   width: 20%;
-  padding-bottom: 10px;
-  margin-bottom:10px;
-
+  margin-bottom:20px;
   border-top: 1px solid #d8d8d8;
   border-left: 1px solid #d8d8d8;
   border-right: 1px solid #d8d8d8;
   border-bottom: none;
+}
 
+.fa-line-chart {
+  padding-right: 7px;
+  color: #666;
+}
+
+.repositories,
+.public-activity {
+  border-bottom: 1px solid #d8d8d8;
+}
+
+.fa-plus-square-o {
+  font-weight: 500;
+  padding: 0 5px 0 5px;
 }
 
 .content-list {
@@ -139,19 +237,20 @@ nav {
   padding-top: 7px;
 }
 .content-title {
-  border: .5px solid #d8d8d8;
+  border: .35px solid #d8d8d8;
   background-color: #f5f5f5;
   font-weight: 700;
-  font-size: 16px;
-  padding: 5px 0px 5px 5px;
-  width: 109.5%;
+  font-size: 14px;
+  padding: 12px 0px 12px 13px;
+  width: 108.625%;
 }
 
 .content-repo {
   width: 110%;
-  border: 1px solid #d8d8d8;
+  border: .001px solid #d8d8d8;
   height: 35px;
   padding-right: 2px;
+  padding-bottom: 12.5px;
 }
 .content-repo h5 {
   display: inline-block;
@@ -164,12 +263,19 @@ nav {
 .content-repo p {
   /*display: inline-block;*/
   color: #666;
+  /*padding: 3.5px 0 3.5px 3em;*/
   padding-top: 3.5px;
-  padding-left: 5px;
+  padding-left: 2.95em;
 }
 
 .content-repo span {
   display: inline-block;
   padding-top: 8px;
   float: right;
+}
+
+.fa-file-code-o {
+  color: #666;
+  padding-right: 8px;
+  padding-left: .45em;
 }

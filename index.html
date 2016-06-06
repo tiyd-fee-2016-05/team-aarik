@@ -8,11 +8,11 @@
     <link rel="stylesheet" href="assets/css/styles.css">
   </head>
   <body>
-    <div class="wrapper">
     <header>
-      <nav>
+      <nav class="main-nav">
         <ul>
-          <li><input type="text" placeholder="Search GitHub"></input></li>
+          <li><span class="fa fa-github fa-2x" aria-hidden="true"></span></li>
+          <li class="search-github"><input type="text" placeholder="Search GitHub"></input></li>
           <li class= "header-links"><a href="#">Pull requests</a></li>
           <li class= "header-links"><a href="#">Issues</a></li>
           <li class= "header-links"><a href="#">Gist</a></li>
@@ -21,16 +21,18 @@
         <div class="user-dropdown"></div>
       </nav>
     </header>
+    <div class="wrapper">
+
     <div class="sidebar">
       <img class="avatar" src="assets/images/octocat-avatar.jpeg">
       <ul class="user-data">
         <li class="user-actual-name">The Octocat</li>
         <li class="user-login-name">octocat</li>
-        <li class="user-info employer">Github</li>
-        <li class="user-info work-location">San Francisco</li>
-        <li class="user-info email"><a href="#">octocat@github.com</a></li>
-        <li class="user-info website"><a href="#">http://www.github.com/blog</a></li>
-        <li class="user-info joined-date">Joined on Jan 25, 2011</li>
+        <li class="user-info employer"><span class="fa fa-pied-piper-alt user-data-icon" aria-hidden="true"></span>Github</li>
+        <li class="user-info work-location"><span class="fa fa-map-marker user-data-icon" aria-hidden="true"></span>San Francisco</li>
+        <li class="user-info email"><span class="fa fa-envelope-o user-data-icon" aria-hidden="true"></span><a href="#">octocat@github.com</a></li>
+        <li class="user-info website"><span class="fa fa-link user-data-icon" aria-hidden="true"></span><a href="#">http://www.github.com/blog</a></li>
+        <li class="user-info joined-date"><span class="fa fa-clock-o user-data-icon" aria-hidden="true"></span>Joined on Jan 25, 2011</li>
       </ul>
       <ul class="social-status">
         <li><h3>1.4k</h3>Followers</li>
@@ -39,25 +41,29 @@
       </ul>
     </div>
     <main class="main-content">
-    <div class="second-nav">
-
-      <ul class="content-bar">
-
-        <li class="secondary-nav-content contributions">Contributions</li>
-        <li class="secondary-nav-content repositories">Repositories</li>
-        <li class="secondary-nav-content public-activity">Public activity</li>
-        <li class="secondary-nav-content"><button type="button" class="follow">Follow</button></li>
-        <li class="secondary-nav-content"><button type="button" class="block">Block or Report</button></li>
-          <ul class="content-list">
-            <li class ="content-title">Popular Repositories</li>
-            <li class ="content-repo"><h5>Spoon-Knife</h5><span class="stars">9,939</span><p>This repo is for demonstration purposes only</p></li>
-            <li class ="content-repo"><h5>Hello-world</h5><span class="stars">1,406</span><p>My first repository on github!</p></li>
-            <li class ="content-repo"><h5>hello-world</h5><span class="stars">13</span><p>My first repository on github</p></li>
-            <li class ="content-repo"><h5>octocat.github.io</h5><span class="stars">12</span><p></p></li>
-            <li class ="content-repo"><h5>git-consortium</h5><span class="stars">7</span><p>This repo is for demonstration purposes only</p></li>
-          </ul>
-      </ul>
-
+      <div class="second-nav">
+        <ul class="content-bar">
+          <div class="bottom-border">
+            <li class="secondary-nav-content contributions"><span class="fa fa-plus-square-o" aria-hidden="true"></span>Contributions</li>
+            <li class="secondary-nav-content repositories"><span class="fa fa-file-code-o" aria-hidden="true"></span>Repositories</li>
+            <li class="secondary-nav-content public-activity"><span class="fa fa-line-chart" aria-hidden="true"></span>Public activity</li>
+            <li class="secondary-nav-content"><button type="button" class="follow">Follow</button></li>
+            <li class="secondary-nav-content"><button type="button" class="block">Block or report</button></li>
+          </div>
+            <ul class="content-list">
+              <li class ="content-title">Popular Repositories</li>
+              <li class ="content-repo"><h5><i class="fa fa-file-code-o" aria-hidden="true"></i>Spoon-Knife</h5><span class="stars">9,939<i class="fa fa-star" aria-hidden="true"></i>
+                </span><p>This repo is for demonstration purposes only</p></li>
+              <li class ="content-repo"><h5><i class="fa fa-file-code-o" aria-hidden="true"></i>Hello-world</h5><span class="stars">1,406<i class="fa fa-star" aria-hidden="true"></i>
+                </span><p>My first repository on github!</p></li>
+              <li class ="content-repo"><h5><i class="fa fa-file-code-o" aria-hidden="true"></i>hello-world</h5><span class="stars">13<i class="fa fa-star" aria-hidden="true"></i>
+                </span><p>My first repository on github</p></li>
+              <li class ="content-repo"><h5><i class="fa fa-file-code-o" aria-hidden="true"></i>octocat.github.io</h5><span class="stars">12<i class="fa fa-star" aria-hidden="true"></i>
+                </span><p></p></li>
+              <li class ="content-repo"><h5><i class="fa fa-file-code-o" aria-hidden="true"></i>git-consortium</h5><span class="stars">7<i class="fa fa-star" aria-hidden="true"></i>
+                </span><p>This repo is for demonstration purposes only</p></li>
+            </ul>
+        </ul>
     </div>
 
 
