@@ -10,16 +10,19 @@
   <body>
     <div class="wrapper">
     <header>
-      <ul>
-      <li><input type="text" placeholder="Search GitHub"></input></li>
-      <li class= "header-links"><a href="#">Pull requests</a></li>
-      <li class= "header-links"><a href="#">Issues</a></li>
-      <li class= "header-links"><a href="#">Gist</a></li>
-      <div class="repo-dropdown"></div>
-      <div class="user-dropdown"></div>
+      <nav>
+        <ul>
+          <li><input type="text" placeholder="Search GitHub"></input></li>
+          <li class= "header-links"><a href="#">Pull requests</a></li>
+          <li class= "header-links"><a href="#">Issues</a></li>
+          <li class= "header-links"><a href="#">Gist</a></li>
+        </ul>
+        <div class="repo-dropdown"></div>
+        <div class="user-dropdown"></div>
+      </nav>
     </header>
     <div class="sidebar">
-      <img src="assets/images/octocat-avatar.jpeg">
+      <img class="avatar" src="assets/images/octocat-avatar.jpeg">
       <ul class="user-data">
         <li class="user-actual-name">The Octocat</li>
         <li class="user-login-name">octocat</li>
@@ -37,22 +40,22 @@
     </div>
     <main class="main-content">
     <div class="second-nav">
-      <ul>
 
-        <li class="secondary-nav-content contributions">Contributions
-          <ul class="content-list">
-            <li class ="content-title">Popular Repositories</li>
-            <li class ="content-repo"><h5>Spoon-Knife</h5><p>This repo is for demonstration purposes only</p><span class="stars">9,939</span></li>
-            <li class ="content-repo"><h5>Hello-world</h5><p>My first repository on github!</p><span class="stars">1,406</span></li>
-            <li class ="content-repo"><h5>hello-world</h5><p>My first repository on github</p><span class="stars">13</span></li>
-            <li class ="content-repo"><h5>octocat.github.io</h5><p></p><span class="stars">12</span></li>
-            <li class ="content-repo"><h5>git-consortium</h5><p>This repo is for demonstration purposes only</p><span class="stars">7</span></li>
-          </ul>
-        </li>
+      <ul class="content-bar">
+
+        <li class="secondary-nav-content contributions">Contributions</li>
         <li class="secondary-nav-content repositories">Repositories</li>
         <li class="secondary-nav-content public-activity">Public activity</li>
-        <button type="button" class="follow">Follow</button>
-        <button type="button" class="block">Block or Report</button>
+        <li class="secondary-nav-content"><button type="button" class="follow">Follow</button></li>
+        <li class="secondary-nav-content"><button type="button" class="block">Block or Report</button></li>
+          <ul class="content-list">
+            <li class ="content-title">Popular Repositories</li>
+            <li class ="content-repo"><h5>Spoon-Knife</h5><span class="stars">9,939</span><p>This repo is for demonstration purposes only</p></li>
+            <li class ="content-repo"><h5>Hello-world</h5><span class="stars">1,406</span><p>My first repository on github!</p></li>
+            <li class ="content-repo"><h5>hello-world</h5><span class="stars">13</span><p>My first repository on github</p></li>
+            <li class ="content-repo"><h5>octocat.github.io</h5><span class="stars">12</span><p></p></li>
+            <li class ="content-repo"><h5>git-consortium</h5><span class="stars">7</span><p>This repo is for demonstration purposes only</p></li>
+          </ul>
       </ul>
 
     </div>
