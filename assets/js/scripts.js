@@ -6,8 +6,10 @@ $(function () {
 
     var ghLogin = $('input[name="gh-login"]').val();
     $.getJSON('https://api.github.com/users/' + ghLogin)
-      .done(showUser)
-      .fail(showError);
+      .done(showUser);
+    // $.getJSON('https://api.github.com'+ghLogin+'/repos')
+    //   .done(showUser)
+    //   .fail(showError);
   });
 
   function showUser(user) {
@@ -23,7 +25,8 @@ $(function () {
 
   function show(template, model) {
     var fn = _.template($('#' + template).html(), { variable: 'm' });
-    $('.sidebar').html(fn(model));
+    $('.user-info').html(fn(model));
+    // $('.user-info').html(fn(model));
   }
 
 });
