@@ -89,6 +89,10 @@ margin-left:100px;
   margin-bottom: 10px;
 
 }
+.website{
+  font-size: 8px;
+  /*width: 20%;*/
+}
 
 .user-data-icon {
   color: #666;
@@ -165,7 +169,7 @@ margin-left:100px;
 .secondary-nav-content {
   /*position: relative;*/
   display: inline-block;
-  width: 18%;
+  width: 20%;
   padding-bottom: 10px;
   margin-bottom: 10px;
   /*border-bottom: 1px solid #green;*/
@@ -184,7 +188,7 @@ margin-left:100px;
   width: 70px;
   height: 25px;
   border-radius: .25em;
-  margin-left: 130px;
+  margin-left: 100px;
   color: #fff;
   font-size: 13px;
   font-weight: 700;
@@ -193,7 +197,8 @@ margin-left:100px;
 .block {
   font-size: 13px;
   font-weight: 700;
-  margin-left: 75px;
+  margin-left: 579px;
+  margin-top: -49px;
   background: #fff;
   color: #666;
   width: 120px;
