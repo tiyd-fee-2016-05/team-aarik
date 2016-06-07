@@ -7,13 +7,16 @@ $(function () {
     var ghLogin = $('input[name="gh-login"]').val();
     $.getJSON('https://api.github.com/users/' + ghLogin)
       .done(showUser);
-    // $.getJSON('https://api.github.com'+ghLogin+'/repos')
-    //   .done(showUser)
+    // $.getJSON('https://api.github.com/users/'+ghLogin+'/repos')
+    //   .done(showUser2)
     //   .fail(showError);
   });
 
   function showUser(user) {
     show('gh-user-template', user);
+  }
+  function showUser2(user) {
+    show('gh-user-template2', user);
   }
 
   function showError(req, status, err) {
@@ -26,7 +29,7 @@ $(function () {
   function show(template, model) {
     var fn = _.template($('#' + template).html(), { variable: 'm' });
     $('.user-info').html(fn(model));
-    // $('.user-info').html(fn(model));
+    $('.user-info2').html(fn(model));
   }
 
 });
