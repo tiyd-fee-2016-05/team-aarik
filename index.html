@@ -12,7 +12,7 @@
       <nav class="main-nav">
         <ul>
           <li><span class="fa fa-github fa-2x" aria-hidden="true"></span></li>
-          <li class="search-github"><input class="searchbar" type="text" placeholder="Search GitHub"></input></li>
+          <li class="search-github"><form class="searchbar"><input class="searchbar" type="text" name="gh-login" placeholder="Search GitHub"></input></form></li>
           <li class= "header-links"><a href="#">Pull requests</a></li>
           <li class= "header-links"><a href="#">Issues</a></li>
           <li class= "header-links"><a href="#">Gist</a></li>
@@ -23,25 +23,29 @@
     </header>
     <div class="wrapper">
     <div class="sidebar">
+      <div class="user-info">
+      </div>
       <script id="gh-user-template" type="text/html">
 
-      <img class="avatar" src="assets/images/octocat-avatar.jpeg">
+      <img class="avatar" src="<%-m.avatar_url%>">
       <ul class="user-data">
         <li class="user-actual-name"><span><%- m.name %></span></li>
 
         <li class="user-login-name"><span><%- m.login %></span></li>
-        <li class="user-info employer"><span class="fa fa-pied-piper-alt user-data-icon" aria-hidden="true"></span><span><%-m.company%></span></li>
-        <li class="user-info work-location"><span class="fa fa-map-marker user-data-icon" aria-hidden="true"></span><span><% -m.location %></span></li>
-        <li class="user-info email"><span class="fa fa-envelope-o user-data-icon" aria-hidden="true"></span><a href="#"><span><% -m.email %></span></a></li>
-        <li class="user-info website"><span class="fa fa-link user-data-icon" aria-hidden="true"></span><a href="#"><span><% -m.blog %></span></a></li>
-        <li class="user-info joined-date"><span class="fa fa-clock-o user-data-icon" aria-hidden="true"></span><span><% -m.created_at %></span></li>
+        <li class="user-info employer"><span class="fa fa-pied-piper-alt user-data-icon" aria-hidden="true"></span><span><%- m.company%></span></li>
+        <li class="user-info work-location"><span class="fa fa-map-marker user-data-icon" aria-hidden="true"></span><span><%- m.location %></span></li>
+        <li class="user-info email"><span class="fa fa-envelope-o user-data-icon" aria-hidden="true"></span><a href="#"><span><%- m.email %></span></a></li>
+        <li class="user-info website"><span class="fa fa-link user-data-icon" aria-hidden="true"></span><a href="#"><span><%- m.blog %></span></a></li>
+        <li class="user-info joined-date"><span class="fa fa-clock-o user-data-icon" aria-hidden="true"></span><span><%- m.created_at %></span></li>
       </ul>
+
       <ul class="social-status">
         <li><h3><span><%- m.followers %></span></h3>Followers</li>
         <li><h3>2</h3>Star</li>
-        <li><h3><span><%- following%></span></h3>Following</li>
+        <li><h3><span><%- m.following%></span></h3>Following</li>
       </ul>
-          </script>
+      </script>
+
     </div>
 
     <main class="main-content">
@@ -55,6 +59,8 @@
             <li class="secondary-nav-content"><button type="button" class="block">Block or report</button></li>
           </div>
             <ul class="content-list">
+              <div class=".user-info">
+              </div>
               <li class ="content-title">Popular Repositories</li>
               <li class ="content-repo"><h5><i class="fa fa-file-code-o" aria-hidden="true"></i><span><%-name%></span></h5><span class="stars"><span><%-watchers%></span><i class="fa fa-star" aria-hidden="true"></i>
               </span><p><span><%-m.description%></span></p></li>
