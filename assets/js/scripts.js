@@ -1,7 +1,8 @@
 $(function () {
 
-  $('.searchbar').on('submit', function (e) {
+  $('.searchbar').submit(function (e) {
     e.preventDefault();
+    console.log("Submit")
 
     var ghLogin = $('input[name="gh-login"]').val();
     $.getJSON('https://api.github.com/users/' + ghLogin)
@@ -22,7 +23,7 @@ $(function () {
 
   function show(template, model) {
     var fn = _.template($('#' + template).html(), { variable: 'm' });
-    $('.user-info').html(fn(model));
+    $('.sidebar').html(fn(model));
   }
 
 });
