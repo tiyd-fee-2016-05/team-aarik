@@ -12,7 +12,7 @@
       <nav class="main-nav">
         <ul>
           <li><span class="fa fa-github fa-2x" aria-hidden="true"></span></li>
-          <li class="search-github"><input type="text" placeholder="Search GitHub"></input></li>
+          <li class="search-github"><input class="searchbar" type="text" placeholder="Search GitHub"></input></li>
           <li class= "header-links"><a href="#">Pull requests</a></li>
           <li class= "header-links"><a href="#">Issues</a></li>
           <li class= "header-links"><a href="#">Gist</a></li>
@@ -22,11 +22,13 @@
       </nav>
     </header>
     <div class="wrapper">
-
     <div class="sidebar">
+      <script id="gh-user-template" type="text/html">
+
       <img class="avatar" src="assets/images/octocat-avatar.jpeg">
       <ul class="user-data">
-        <li class="user-actual-name"><span><%- m.id %></span></li>
+        <li class="user-actual-name"><span><%- m.name %></span></li>
+
         <li class="user-login-name"><span><%- m.login %></span></li>
         <li class="user-info employer"><span class="fa fa-pied-piper-alt user-data-icon" aria-hidden="true"></span><span><%-m.company%></span></li>
         <li class="user-info work-location"><span class="fa fa-map-marker user-data-icon" aria-hidden="true"></span><span><% -m.location %></span></li>
@@ -35,11 +37,13 @@
         <li class="user-info joined-date"><span class="fa fa-clock-o user-data-icon" aria-hidden="true"></span><span><% -m.created_at %></span></li>
       </ul>
       <ul class="social-status">
-        <li><h3>1.4k</h3>Followers</li>
+        <li><h3><span><%- m.followers %></span></h3>Followers</li>
         <li><h3>2</h3>Star</li>
-        <li><h3>6</h3>Following</li>
+        <li><h3><span><%- following%></span></h3>Following</li>
       </ul>
+          </script>
     </div>
+
     <main class="main-content">
       <div class="second-nav">
         <ul class="content-bar">
@@ -52,16 +56,16 @@
           </div>
             <ul class="content-list">
               <li class ="content-title">Popular Repositories</li>
-              <li class ="content-repo"><h5><i class="fa fa-file-code-o" aria-hidden="true"></i>Spoon-Knife</h5><span class="stars">9,939<i class="fa fa-star" aria-hidden="true"></i>
-                </span><p>This repo is for demonstration purposes only</p></li>
-              <li class ="content-repo"><h5><i class="fa fa-file-code-o" aria-hidden="true"></i>Hello-world</h5><span class="stars">1,406<i class="fa fa-star" aria-hidden="true"></i>
-                </span><p>My first repository on github!</p></li>
-              <li class ="content-repo"><h5><i class="fa fa-file-code-o" aria-hidden="true"></i>hello-world</h5><span class="stars">13<i class="fa fa-star" aria-hidden="true"></i>
-                </span><p>My first repository on github</p></li>
-              <li class ="content-repo"><h5><i class="fa fa-file-code-o" aria-hidden="true"></i>octocat.github.io</h5><span class="stars">12<i class="fa fa-star" aria-hidden="true"></i>
+              <li class ="content-repo"><h5><i class="fa fa-file-code-o" aria-hidden="true"></i><span><%-name%></span></h5><span class="stars"><span><%-watchers%></span><i class="fa fa-star" aria-hidden="true"></i>
+              </span><p><span><%-m.description%></span></p></li>
+              <li class ="content-repo"><h5><i class="fa fa-file-code-o" aria-hidden="true"></i><span><%-name%></span></h5><span class="stars"><span><%-watchers%></span><i class="fa fa-star" aria-hidden="true"></i>
+                </span><p><span><%-m.description%></span></p></li>
+              <li class ="content-repo"><h5><i class="fa fa-file-code-o" aria-hidden="true"></i><span><%-name%></span></h5><span class="stars"><span><%-watchers%></span><i class="fa fa-star" aria-hidden="true"></i>
+                </span><p><span><%-m.description%></span></p></li>
+              <li class ="content-repo"><h5><i class="fa fa-file-code-o" aria-hidden="true"></i><span><%-name%></span></h5><span class="stars"><span><%-watchers%></span><i class="fa fa-star" aria-hidden="true"></i>
                 </span><p></p></li>
-              <li class ="content-repo"><h5><i class="fa fa-file-code-o" aria-hidden="true"></i>git-consortium</h5><span class="stars">7<i class="fa fa-star" aria-hidden="true"></i>
-                </span><p>This repo is for demonstration purposes only</p></li>
+              <li class ="content-repo"><h5><i class="fa fa-file-code-o" aria-hidden="true"></i><span><%-name%></span></h5><span class="stars"><span><%-watchers%></span><i class="fa fa-star" aria-hidden="true"></i>
+                </span><p><span><%-m.description%></span></p></li>
             </ul>
         </ul>
     </div>
