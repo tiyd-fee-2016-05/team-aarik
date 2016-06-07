@@ -26,13 +26,13 @@
     <div class="sidebar">
       <img class="avatar" src="assets/images/octocat-avatar.jpeg">
       <ul class="user-data">
-        <li class="user-actual-name">The Octocat</li>
-        <li class="user-login-name">octocat</li>
-        <li class="user-info employer"><span class="fa fa-pied-piper-alt user-data-icon" aria-hidden="true"></span>Github</li>
-        <li class="user-info work-location"><span class="fa fa-map-marker user-data-icon" aria-hidden="true"></span>San Francisco</li>
-        <li class="user-info email"><span class="fa fa-envelope-o user-data-icon" aria-hidden="true"></span><a href="#">octocat@github.com</a></li>
-        <li class="user-info website"><span class="fa fa-link user-data-icon" aria-hidden="true"></span><a href="#">http://www.github.com/blog</a></li>
-        <li class="user-info joined-date"><span class="fa fa-clock-o user-data-icon" aria-hidden="true"></span>Joined on Jan 25, 2011</li>
+        <li class="user-actual-name"><span><%- m.id %></span></li>
+        <li class="user-login-name"><span><%- m.login %></span></li>
+        <li class="user-info employer"><span class="fa fa-pied-piper-alt user-data-icon" aria-hidden="true"></span><span><%-m.company%></span></li>
+        <li class="user-info work-location"><span class="fa fa-map-marker user-data-icon" aria-hidden="true"></span><span><% -m.location %></span></li>
+        <li class="user-info email"><span class="fa fa-envelope-o user-data-icon" aria-hidden="true"></span><a href="#"><span><% -m.email %></span></a></li>
+        <li class="user-info website"><span class="fa fa-link user-data-icon" aria-hidden="true"></span><a href="#"><span><% -m.blog %></span></a></li>
+        <li class="user-info joined-date"><span class="fa fa-clock-o user-data-icon" aria-hidden="true"></span><span><% -m.created_at %></span></li>
       </ul>
       <ul class="social-status">
         <li><h3>1.4k</h3>Followers</li>
@@ -73,6 +73,7 @@
   </div>
 
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/2.2.4/jquery.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/lodash.js/4.13.1/lodash.js"></script>
     <script src="assets/js/scripts.js"></script>
   </body>
 </html>
