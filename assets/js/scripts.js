@@ -1,8 +1,36 @@
 
+
+
+
+
+$(document).ready(function() {
+
+$(".repositories").on("click",function(){
+  //e.preventDefault();
+  var x=0;
+  console.log(x);
+  $(".content-list").css("display","none");
+  $(".repositories").addClass("repoAcitve");
+  $(".repoTab").addClass("repoTabShow");
+  $(".contributions").addClass("contributionsInactive");
+  $(".contributionsInactive").removeClass("contributions");
+});
+
+
+
+$(".public-activity").click(function(){
+  console.log("HIIIII");
+  $(".content-list").css("display", "none");
+  $(".repoTab").css("display", "none")
+
+});
+});
+
+
 $(function () {
 
   var ghLogin;
-
+  var json = $.getJSON("https://api.github.com/users/" + ghLogin + "/repos")
   $('.searchbar').submit(function (e) {
     e.preventDefault();
     // e.stopPropagation();
@@ -38,9 +66,17 @@ $(function () {
   }
 
   function showRepos( repo ) {
-    for( var index = 0; index < 5; index++ ) {
+  for( var index = 0; index < 4; index++ ) {
+
       show2( 'gh-repo-template', repo[index] );
-      console.log( repo[index] );
+
+    //  show2( 'gh-repo-template', repo[1] );
+
+
+      //console.log( repo[index] );
+      //$(".content-repo").text("<%- m.name%>"[index]) //trying to change repo names
+
+
     }
   }
 
@@ -50,10 +86,14 @@ $(function () {
   //   console.log( repo[0] );
   // }
 
-  function show2(template, model) {
+  function show2(template, model ) {
     var fn = _.template($('#' + template).html(), { variable: 'm' });
-    //for( var index = 0; index < 5; index++ ) //I really want this to do something but it doesn't
+    for( var index = 0; index < 4; index++ ) //I really want this to do something but it doesn't
     $('.content-repo').html(fn(model));
+    //$(".content-repo").text(json.responseJSON.name[index]); //thought this might work too....it dont
+
+    //$('.content-repo').html(fn.sort());
+    //$(".helloWorld").html()
     console.log(model)
     // $('.user-info').html(fn(model));
   }
@@ -61,6 +101,7 @@ $(function () {
   //like a puppy who's only been kind of trained. Ugh. Computer. Ugh.
 
 });
+
 
 
 
