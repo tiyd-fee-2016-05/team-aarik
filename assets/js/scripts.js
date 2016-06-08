@@ -57,6 +57,8 @@ $(function () {
     console.log(model)
     // $('.user-info').html(fn(model));
   }
+  //computer why won't you do what I would like you to do. You almost work...
+  //like a puppy who's only been kind of trained. Ugh. Computer. Ugh.
 
 });
 
