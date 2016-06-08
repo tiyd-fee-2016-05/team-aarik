@@ -29,33 +29,36 @@
 
       <img class="avatar" src="<%-m.avatar_url%>">
       <ul class="user-data">
-        <li class="user-actual-name"><span><%- m.name %></span></li>
-
+        <li class="user-actual-name"><span><%-m.name %></span></li>
         <li class="user-login-name"><span><%- m.login %></span></li>
-        <li class="user-info employer"><span class="fa fa-pied-piper-alt user-data-icon" aria-hidden="true"></span><span><%- m.company%></span></li>
-        <li class="user-info work-location"><span class="fa fa-map-marker user-data-icon" aria-hidden="true"></span><span><%- m.location %></span></li>
-        <li class="user-info email"><span class="fa fa-envelope-o user-data-icon" aria-hidden="true"></span><a href="#"><span><%- m.email %></span></a></li>
-        <li class="user-info website"><span class="fa fa-link user-data-icon" aria-hidden="true"></span><a href="#"><span><%- m.blog %></span></a></li>
-        <li class="user-info joined-date"><span class="fa fa-clock-o user-data-icon" aria-hidden="true"></span><span><%- m.created_at %></span></li>
+        <li class="user-info employer"><span class="fa fa-pied-piper-alt user-data-icon" aria-hidden="true"></span><span><%-m.company%></span></li>
+        <li class="user-info work-location"><span class="fa fa-map-marker user-data-icon" aria-hidden="true"></span><span><%-m.location %></span></li>
+        <li class="user-info email"><span class="fa fa-envelope-o user-data-icon" aria-hidden="true"></span><a href="#"><span><%-m.email %></span></a></li>
+        <li class="user-info website"><span class="fa fa-link user-data-icon" aria-hidden="true"></span><a href="#"><span><%-m.blog %></span></a></li>
+        <li class="user-info joined-date"><span class="fa fa-clock-o user-data-icon" aria-hidden="true"></span><span><%-m.created_at %></span></li>
       </ul>
 
       <ul class="social-status">
-        <li><h3><span><%- m.followers %></span></h3>Followers</li>
+        <li><h3><span><%-m.followers %></span></h3>Followers</li>
         <li><h3>2</h3>Star</li>
-        <li><h3><span><%- m.following%></span></h3>Following</li>
+        <li><h3><span><%-m.following%></span></h3>Following</li>
       </ul>
       </script>
 
     </div>
 
     <main class="main-content">
-      <div class="user-info2">
+
+      <div class="content-repo">
       </div>
-      <script id="gh-user-template2" type="text/html">
+      <script id="gh-repo-template" type="text/html">
 
       <div class="second-nav">
+
         <ul class="content-bar">
+
           <div class="bottom-border">
+
             <li class="secondary-nav-content contributions"><span class="fa fa-plus-square-o" aria-hidden="true"></span>Contributions</li>
             <li class="secondary-nav-content repositories"><span class="fa fa-file-code-o" aria-hidden="true"></span>Repositories</li>
             <li class="secondary-nav-content public-activity"><span class="fa fa-line-chart" aria-hidden="true"></span>Public activity</li>
@@ -64,25 +67,21 @@
 
           </div>
 
+
             <ul class="content-list">
-
-
-
-
               <li class ="content-title">Popular Repositories</li>
-
-              <li class ="content-repo"><h5><i class="fa fa-file-code-o" aria-hidden="true"></i><span><%- m.name %></span></h5><span class="stars"><span><%- m.watchers%></span><i class="fa fa-star" aria-hidden="true"></i>
-              </span><p><span><%- m.description%></span></p></li>
-              <li class ="content-repo"><h5><i class="fa fa-file-code-o" aria-hidden="true"></i><span><%- m.name %></span></h5><span class="stars"><span><%- m.watchers%></span><i class="fa fa-star" aria-hidden="true"></i>
-                </span><p><span><%- m.description%></span></p></li>
-              <li class ="content-repo"><h5><i class="fa fa-file-code-o" aria-hidden="true"></i><span><%- m.name %></span></h5><span class="stars"><span><%- m.watchers%></span><i class="fa fa-star" aria-hidden="true"></i>
-                </span><p><span><%- m.description%></span></p></li>
-              <li class ="content-repo"><h5><i class="fa fa-file-code-o" aria-hidden="true"></i><span><%- m.name %></span></h5><span class="stars"><span><%- m.watchers%></span><i class="fa fa-star" aria-hidden="true"></i>
+              <li class ="content-repo"><h5><i class="fa fa-file-code-o" aria-hidden="true"></i><span><%-m.name%></span></h5><span class="stars"><span><%-m.watchers%></span><i class="fa fa-star" aria-hidden="true"></i>
+              </span><p><span><%-m.description%></span></p></li>
+              <li class ="content-repo"><h5><i class="fa fa-file-code-o" aria-hidden="true"></i><span><%-m.name%></span></h5><span class="stars"><span><%-m.watchers%></span><i class="fa fa-star" aria-hidden="true"></i>
+                </span><p><span><%-m.description%></span></p></li>
+              <li class ="content-repo"><h5><i class="fa fa-file-code-o" aria-hidden="true"></i><span><%-m.name%></span></h5><span class="stars"><span><%-m.watchers%></span><i class="fa fa-star" aria-hidden="true"></i>
+                </span><p><span><%-m.description%></span></p></li>
+              <li class ="content-repo"><h5><i class="fa fa-file-code-o" aria-hidden="true"></i><span><%-m.name%></span></h5><span class="stars"><span><%-m.watchers%></span><i class="fa fa-star" aria-hidden="true"></i>
                 </span><p></p></li>
-              <li class ="content-repo"><h5><i class="fa fa-file-code-o" aria-hidden="true"></i><span><%- m.name %></span></h5><span class="stars"><span><%- m.watchers%></span><i class="fa fa-star" aria-hidden="true"></i>
-                </span><p><span><%- m.description%></span></p></li>
-              </script>
+              <li class ="content-repo"><h5><i class="fa fa-file-code-o" aria-hidden="true"></i><span><%-m.name%></span></h5><span class="stars"><span><%-m.watchers%></span><i class="fa fa-star" aria-hidden="true"></i>
+                </span><p><span><%-m.description%></span></p></li>
             </ul>
+          </script>
 
         </ul>
     </div>
@@ -92,7 +91,7 @@
 
 
   </div>
-
+    <!-- <script id="gh-user-template" type="text/html"></script> -->
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/2.2.4/jquery.min.js"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/lodash.js/4.13.1/lodash.js"></script>
     <script src="assets/js/scripts.js"></script>

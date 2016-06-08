@@ -1,15 +1,27 @@
+
 $(function () {
+
+
+  var ghLogin;
+
   $('.searchbar').submit(function (e) {
     e.preventDefault();
+    // e.stopPropagation();
     console.log("Submit")
 
-    var ghLogin = $('input[name="gh-login"]').val();
+    ghLogin = $('input[name="gh-login"]').val();
     $.getJSON('https://api.github.com/users/' + ghLogin)
-      .done(showUser);
-    // $.getJSON('https://api.github.com/users/'+ghLogin+'/repos')
-    //    .done(showUser2)
-    //    .fail(showError);
-  });
+
+      .done(showUser, getJsonRepo);
+
+
+  }); // end submit
+
+  function getJsonRepo() {
+    $.getJSON( "https://api.github.com/users/" + ghLogin + "/repos" )
+      .done(showRepos);
+  }
+
 
   function showUser(user) {
     show('gh-user-template', user);
@@ -69,6 +81,25 @@ $(function () {
     var fn2 = _.template($('#' + template).html(), { variable: 'm' });
     // $('.user-info').html(fn(model));
     $('.user-info2').html(fn2(model));
+  }
+
+  function showRepos( repo ) {
+    for( var index = 0; index < 5; index++ ) {
+      show2( 'gh-repo-template', repo[index] );
+      console.log( repo[index] );
+    }
+  }
+
+  // This works!!!!!
+  // function showRepos( repo ) {
+  //   show2( 'gh-repo-template', repo[0] );
+  //   console.log( repo[0] );
+  // }
+
+  function show2(template, model) {
+    var fn = _.template($('#' + template).html(), { variable: 'm' });
+    $('.content-repo').html(fn(model));
+    // $('.user-info').html(fn(model));
   }
 
 });
