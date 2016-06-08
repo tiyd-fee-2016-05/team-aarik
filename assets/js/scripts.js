@@ -12,6 +12,7 @@ $(".repositories").on("click",function(){
   $(".content-list").css("display","none");
   $(".repositories").addClass("repoAcitve");
   $(".repoTab").addClass("repoTabShow");
+  $(".repoTab").css("display","inline-block");
   $(".contributions").addClass("contributionsInactive");
   $(".contributionsInactive").removeClass("contributions");
 });
@@ -21,9 +22,17 @@ $(".repositories").on("click",function(){
 $(".public-activity").click(function(){
   console.log("HIIIII");
   $(".content-list").css("display", "none");
-  $(".repoTab").css("display", "none")
-
+  $(".repoTab").css("display", "none");
 });
+
+$(".contributions").click(function(){
+  console.log("Hey");
+  $(".content-list").css("display", "block")
+  $(".repoTab").removeClass("repoTabShow");
+  $(".repoTab").css("display", "none")
+});
+
+
 });
 
 
@@ -33,9 +42,10 @@ $(function () {
   var json = $.getJSON("https://api.github.com/users/" + ghLogin + "/repos")
   $('.searchbar').submit(function (e) {
     e.preventDefault();
+    $(".repoTab").removeClass("repoTabShow");
     // e.stopPropagation();
     console.log("Submit")
-
+    //console.log(json.responseJSON.name)
     ghLogin = $('input[name="gh-login"]').val();
     $.getJSON('https://api.github.com/users/' + ghLogin)
       .done(showUser, getJsonRepo);
@@ -68,12 +78,14 @@ $(function () {
   function showRepos( repo ) {
   for( var index = 0; index < 4; index++ ) {
 
+
       show2( 'gh-repo-template', repo[index] );
 
     //  show2( 'gh-repo-template', repo[1] );
 
-
-      //console.log( repo[index] );
+      //$(".content-repo").append(repo) //cant figure out how to append .name returns
+                                        // undefined. I am very lost.
+      console.log( repo[index] );
       //$(".content-repo").text("<%- m.name%>"[index]) //trying to change repo names
 
 
@@ -88,7 +100,7 @@ $(function () {
 
   function show2(template, model ) {
     var fn = _.template($('#' + template).html(), { variable: 'm' });
-    for( var index = 0; index < 4; index++ ) //I really want this to do something but it doesn't
+    for( var index = 0; index < 5; index++ ) //I really want this to do something but it doesn't
     $('.content-repo').html(fn(model));
     //$(".content-repo").text(json.responseJSON.name[index]); //thought this might work too....it dont
 
