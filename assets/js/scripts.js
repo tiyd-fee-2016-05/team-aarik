@@ -1,7 +1,6 @@
 
 $(function () {
 
-
   var ghLogin;
 
   $('.searchbar').submit(function (e) {
@@ -11,7 +10,6 @@ $(function () {
 
     ghLogin = $('input[name="gh-login"]').val();
     $.getJSON('https://api.github.com/users/' + ghLogin)
-
       .done(showUser, getJsonRepo);
 
 
@@ -22,13 +20,9 @@ $(function () {
       .done(showRepos);
   }
 
-
   function showUser(user) {
     show('gh-user-template', user);
   }
-  // function showUser2(user) {
-  //   show('gh-user-template2', user);
-  // }
 
   function showError(req, status, err) {
     err = err || {};
@@ -40,47 +34,7 @@ $(function () {
   function show(template, model) {
     var fn = _.template($('#' + template).html(), { variable: 'm' });
     $('.user-info').html(fn(model));
-    //$('.user-info2').html(fn(model));
-  }
-
-});
-
-
-
-
-$(function () {
-  $('.searchbar').submit(function (e) {
-    e.preventDefault();
-    console.log("Submit")
-
-    var ghLogin = $('input[name="gh-login"]').val();
-    // $.getJSON('https://api.github.com/users/' + ghLogin)
-    //   .done(showUser);
-    $.getJSON('https://api.github.com/users/'+ghLogin+'/repos')
-       .done(showUser2)
-       .fail(showError);
-  });
-
-  // function showUser(user) {
-  //   show('gh-user-template', user);
-  // }
-  function showUser2(model) {
-    console.log("Please")
-    show2('gh-user-template2', model);
-  }
-
-  function showError(req, status, err) {
-    err = err || {};
-    err.message = err.message || status;
-    console.log(err);
-    show2('gh-error-template2', { message: err });
-  }
-
-  function show2(template, model) {
-    console.log("prettyPlease")
-    var fn2 = _.template($('#' + template).html(), { variable: 'm' });
     // $('.user-info').html(fn(model));
-    $('.user-info2').html(fn2(model));
   }
 
   function showRepos( repo ) {
@@ -90,7 +44,7 @@ $(function () {
     }
   }
 
-  // This works!!!!!
+  //This works!!!!!
   // function showRepos( repo ) {
   //   show2( 'gh-repo-template', repo[0] );
   //   console.log( repo[0] );
@@ -98,7 +52,9 @@ $(function () {
 
   function show2(template, model) {
     var fn = _.template($('#' + template).html(), { variable: 'm' });
+    //for( var index = 0; index < 5; index++ ) //I really want this to do something but it doesn't
     $('.content-repo').html(fn(model));
+    console.log(model)
     // $('.user-info').html(fn(model));
   }
 
