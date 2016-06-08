@@ -14,9 +14,9 @@ $(function () {
   function showUser(user) {
     show('gh-user-template', user);
   }
-  function showUser2(user) {
-    show('gh-user-template2', user);
-  }
+  // function showUser2(user) {
+  //   show('gh-user-template2', user);
+  // }
 
   function showError(req, status, err) {
     err = err || {};
@@ -28,7 +28,7 @@ $(function () {
   function show(template, model) {
     var fn = _.template($('#' + template).html(), { variable: 'm' });
     $('.user-info').html(fn(model));
-    $('.user-info2').html(fn(model));
+    //$('.user-info2').html(fn(model));
   }
 
 });
@@ -52,9 +52,9 @@ $(function () {
   // function showUser(user) {
   //   show('gh-user-template', user);
   // }
-  function showUser2(user) {
+  function showUser2(model) {
     console.log("Please")
-    show2('gh-user-template2', user);
+    show2('gh-user-template2', model);
   }
 
   function showError(req, status, err) {
