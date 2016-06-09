@@ -166,12 +166,16 @@ margin-left:100px;
   padding-top: -25px;
   margin-bottom: 8px;
 }*/
+.bottom-border{
+  width: 100%;
+}
 .secondary-nav-content {
   /*position: relative;*/
   display: inline-block;
   width: 20%;
   padding-bottom: 10px;
   margin-bottom: 10px;
+  margin-left: 20px;
   /*border-bottom: 1px solid #green;*/
 }
 
@@ -180,7 +184,7 @@ margin-left:100px;
   position: absolute;
   display: inline-block;
   margin-top: 2px;
-  float: right;
+  /*float: right;*/
 }
 
 .follow {
@@ -188,7 +192,7 @@ margin-left:100px;
   width: 70px;
   height: 25px;
   border-radius: .25em;
-  margin-left: 100px;
+  margin-left: 40px;
   color: #fff;
   font-size: 13px;
   font-weight: 700;
@@ -206,6 +210,21 @@ margin-left:100px;
   border-radius: .25em;
 }
 
+.contributionsInactive {
+  font-size: 16px;
+  padding-left: 10px;
+  padding-top: 10px;
+  padding-bottom: 8px;
+  width: 20%;
+  margin-bottom:20px;
+  /*background-color: yellow;*/
+  /*border-top: 1px solid #d8d8d8;*/
+  /*border-left: 1px solid #d8d8d8;*/
+  /*border-right: 1px solid #d8d8d8;*/
+  /*border-bottom: none;*/
+  border-bottom: 1px solid #d8d8d8;
+}
+
 .contributions {
   font-size: 16px;
   padding-left: 10px;
@@ -218,6 +237,13 @@ margin-left:100px;
   border-right: 1px solid #d8d8d8;
   border-bottom: none;
 }
+.repoActive {
+  border-bottom: none;
+  border-top: 1px solid #d8d8d8;
+  border-left: 1px solid #d8d8d8;
+  border-right: 1px solid #d8d8d8;
+}
+
 
 .fa-line-chart {
   padding-right: 7px;
@@ -236,6 +262,7 @@ margin-left:100px;
 
 .content-list {
   font-size: 12px;
+  margin-left: 16px;
 }
 
 .content-list li {
@@ -252,7 +279,7 @@ margin-left:100px;
 
 .content-repo {
   width: 110%;
-  border: .001px solid #d8d8d8;
+  /*border: .001px solid #d8d8d8;*/
   height: 35px;
   padding-right: 2px;
   padding-bottom: 12.5px;
@@ -277,6 +304,37 @@ margin-left:100px;
   display: inline-block;
   padding-top: 8px;
   float: right;
+}
+.repoTab {
+  font-size: 20px;
+  font-weight: 700;
+  color: #4078c0;
+  display: none;
+  border: 1px solid green;
+  width: 100%;
+  padding-top: 30px;
+  padding-bottom: 30px;
+
+}
+.repoTabShow {
+  display:inline-block;
+  padding-left: 20px;
+  margin-left: 20px;
+
+}
+.repoDescr {
+  font-size: 12px;
+  color: #666;
+  margin-top: 10px;
+  padding-top: 50px;
+}
+.date {
+  display:block;
+  width: 100%;
+  font-size: 10px;
+  margin-top: 10px;
+  color: #666;
+
 }
 
 .fa-file-code-o {

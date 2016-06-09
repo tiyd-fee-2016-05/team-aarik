@@ -12,7 +12,7 @@
       <nav class="main-nav">
         <ul>
           <li><span class="fa fa-github fa-2x" aria-hidden="true"></span></li>
-          <li class="search-github"><input type="text" placeholder="Search GitHub"></input></li>
+          <li class="search-github"><form class="searchbar"><input class="searchbar" type="text" name="gh-login" value="octocat"></input></form></li>
           <li class= "header-links"><a href="#">Pull requests</a></li>
           <li class= "header-links"><a href="#">Issues</a></li>
           <li class= "header-links"><a href="#">Gist</a></li>
@@ -22,47 +22,76 @@
       </nav>
     </header>
     <div class="wrapper">
-
     <div class="sidebar">
-      <img class="avatar" src="assets/images/octocat-avatar.jpeg">
+      <div class="user-info">
+      </div>
+      <script id="gh-user-template" type="text/html">
+
+      <img class="avatar" src="<%-m.avatar_url%>">
       <ul class="user-data">
-        <li class="user-actual-name">The Octocat</li>
-        <li class="user-login-name">octocat</li>
-        <li class="user-info employer"><span class="fa fa-pied-piper-alt user-data-icon" aria-hidden="true"></span>Github</li>
-        <li class="user-info work-location"><span class="fa fa-map-marker user-data-icon" aria-hidden="true"></span>San Francisco</li>
-        <li class="user-info email"><span class="fa fa-envelope-o user-data-icon" aria-hidden="true"></span><a href="#">octocat@github.com</a></li>
-        <li class="user-info website"><span class="fa fa-link user-data-icon" aria-hidden="true"></span><a href="#">http://www.github.com/blog</a></li>
-        <li class="user-info joined-date"><span class="fa fa-clock-o user-data-icon" aria-hidden="true"></span>Joined on Jan 25, 2011</li>
+        <li class="user-actual-name"><span><%-m.name %></span></li>
+        <li class="user-login-name"><span><%- m.login %></span></li>
+        <li class="user-info employer"><span class="fa fa-pied-piper-alt user-data-icon" aria-hidden="true"></span><span><%-m.company%></span></li>
+        <li class="user-info work-location"><span class="fa fa-map-marker user-data-icon" aria-hidden="true"></span><span><%-m.location %></span></li>
+        <li class="user-info email"><span class="fa fa-envelope-o user-data-icon" aria-hidden="true"></span><a href="#"><span><%-m.email %></span></a></li>
+        <li class="user-info website"><span class="fa fa-link user-data-icon" aria-hidden="true"></span><a href="#"><span><%-m.blog %></span></a></li>
+        <li class="user-info joined-date"><span class="fa fa-clock-o user-data-icon" aria-hidden="true"></span><span><%-m.created_at %></span></li>
       </ul>
+
       <ul class="social-status">
-        <li><h3>1.4k</h3>Followers</li>
+        <li><h3><span><%-m.followers %></span></h3>Followers</li>
         <li><h3>2</h3>Star</li>
-        <li><h3>6</h3>Following</li>
+        <li><h3><span><%-m.following%></span></h3>Following</li>
       </ul>
+      </script>
+
     </div>
+
     <main class="main-content">
+
+
+
+
       <div class="second-nav">
+
         <ul class="content-bar">
+
           <div class="bottom-border">
+
             <li class="secondary-nav-content contributions"><span class="fa fa-plus-square-o" aria-hidden="true"></span>Contributions</li>
             <li class="secondary-nav-content repositories"><span class="fa fa-file-code-o" aria-hidden="true"></span>Repositories</li>
             <li class="secondary-nav-content public-activity"><span class="fa fa-line-chart" aria-hidden="true"></span>Public activity</li>
             <li class="secondary-nav-content"><button type="button" class="follow">Follow</button></li>
             <li class="secondary-nav-content"><button type="button" class="block">Block or report</button></li>
+
           </div>
+
+          <div class="content-repo">
+          </div>
+          <!-- <script id="gh-repo-template" type="text/html"> -->
+
+
             <ul class="content-list">
-              <li class ="content-title">Popular Repositories</li>
-              <li class ="content-repo"><h5><i class="fa fa-file-code-o" aria-hidden="true"></i>Spoon-Knife</h5><span class="stars">9,939<i class="fa fa-star" aria-hidden="true"></i>
-                </span><p>This repo is for demonstration purposes only</p></li>
-              <li class ="content-repo"><h5><i class="fa fa-file-code-o" aria-hidden="true"></i>Hello-world</h5><span class="stars">1,406<i class="fa fa-star" aria-hidden="true"></i>
-                </span><p>My first repository on github!</p></li>
-              <li class ="content-repo"><h5><i class="fa fa-file-code-o" aria-hidden="true"></i>hello-world</h5><span class="stars">13<i class="fa fa-star" aria-hidden="true"></i>
-                </span><p>My first repository on github</p></li>
-              <li class ="content-repo"><h5><i class="fa fa-file-code-o" aria-hidden="true"></i>octocat.github.io</h5><span class="stars">12<i class="fa fa-star" aria-hidden="true"></i>
+              <!-- <li class ="content-title">Popular Repositories</li>
+              <li class ="content-repo helloWorld"><h5><i class="fa fa-file-code-o" aria-hidden="true"></i><span><%-m.name%></span></h5><span class="stars"><span><%-m.watchers%></span><i class="fa fa-star" aria-hidden="true"></i>
+              </span><p><span><%- m.description%></span></p></li>
+              <li class ="content-repo githubio"><h5><i class="fa fa-file-code-o" aria-hidden="true"></i><span><%-m.name%></span></h5><span class="stars"><span><%-m.watchers%></span><i class="fa fa-star" aria-hidden="true"></i>
+              </span><p><span><%- m.description%></span></p></li>
+              <li class ="content-repo"><h5><i class="fa fa-file-code-o" aria-hidden="true"></i><span><%-m.name%></span></h5><span class="stars"><span><%-m.watchers%></span><i class="fa fa-star" aria-hidden="true"></i>
+              </span><p><span><%- m.description%></span></p></li>
+              <li class ="content-repo"><h5><i class="fa fa-file-code-o" aria-hidden="true"></i><span><%-m.name%></span></h5><span class="stars"><span><%-m.watchers%></span><i class="fa fa-star" aria-hidden="true"></i>
                 </span><p></p></li>
-              <li class ="content-repo"><h5><i class="fa fa-file-code-o" aria-hidden="true"></i>git-consortium</h5><span class="stars">7<i class="fa fa-star" aria-hidden="true"></i>
-                </span><p>This repo is for demonstration purposes only</p></li>
+              <li class ="content-repo"><h5><i class="fa fa-file-code-o" aria-hidden="true"></i><span><%-m.name%></span></h5><span class="stars"><span><%-m.watchers%></span><i class="fa fa-star" aria-hidden="true"></i>
+                </span><p><span><%-m.description%></span></p></li> -->
+
             </ul>
+
+          <!-- </script> -->
+          <li class="repoTab">Spoon-Knife</br><span class="repoDescr">This repo is for demo purposes only</span></br><span class="date"> November 12, 2003</li>
+          <li class="repoTab">Hello-World</br><span class="repoDescr">This is my first repo!</span></li>
+          <li class="repoTab">test-repo1</br><span class="repoDescr"></span></li>
+          <li class="repoTab">octocat.github.io</br><span class="repoDescr">This repo is for demo purposes only</span></li>
+
         </ul>
     </div>
 
@@ -71,8 +100,9 @@
 
 
   </div>
-
+    <!-- <script id="gh-user-template" type="text/html"></script> -->
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/2.2.4/jquery.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/lodash.js/4.13.1/lodash.js"></script>
     <script src="assets/js/scripts.js"></script>
   </body>
 </html>
